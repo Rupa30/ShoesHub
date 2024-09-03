@@ -1,5 +1,9 @@
-import a_bg_shoe from "./a_bg_shoe.jpg"
+import hero from "./hero.png"
+import logshoes from "./logshoes.png"
+import sneaker from "./sneaker.png"
 
 export const assets = {
-    a_bg_shoe
+    hero,
+    logshoes,
+    sneaker
 }

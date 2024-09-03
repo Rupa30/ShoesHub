@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     height: 100vh;
-    /* max-width: 1200px; */
+    max-width: 1200px;
     margin: 0 auto;
     font-family: 'Poppins', sans-serif;
 }
@@ -13,24 +13,4 @@
 .active {
     padding-bottom: 2px;
     border-bottom: 2px solid white;
-}
-
-.nav {
-    position: absolute;
-    top: 0;
-    left: -50%;
-    background-color: black;
-    color: white;
-    height: 100vh;
-    width: 50%;
-    transition: 1s all ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-}
-
-.nav.active {
-    left: 0;
 }
