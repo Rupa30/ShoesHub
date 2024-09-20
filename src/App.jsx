@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import shoes from './lib/ShoesData';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
-import Men from './pages/Men/Men';
-import Women from './pages/Women/Women';
-import Collection from './pages/Collection/Collection';
-import Contact from './pages/Contact/Contact';
+import About from './components/About/About';
+import Categories from './components/Categories/Categories';
+import Popular from './components/Popular/Popular'
+import Arrivals from './components/Arrivals/Arrivals';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/men' element={<Men />} />
-          <Route path='/women' element={<Women />} />
-          <Route path='/collection' element={<Collection />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/categories' element={<Categories />} />
+          <Route path='/popular' element={<Popular />} />
+          <Route path='/arrivals' element={<Arrivals />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>
         {/* <ShoesPage shoes={shoes} /> */}

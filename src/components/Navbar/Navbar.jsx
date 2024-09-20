@@ -36,9 +36,10 @@ const Navbar = () => {
             <div className={`fixed top-0 left-0 w-1/2 h-full bg-black bg-opacity-90 transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-1000 ease-in-out z-40`}>
                 <ul className="flex flex-col justify-center items-center h-full gap-8 text-white cursor-pointer">
                     <Link to="/" onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>HOME</Link>
-                    <Link to="/collection" onClick={() => setMenu("collection")} className={menu === "collection" ? "active" : ""}>COLLECTION</Link>
-                    <Link to="/men" onClick={() => setMenu("men")} className={menu === "men" ? "active" : ""}>MEN</Link>
-                    <Link to="/women" onClick={() => setMenu("women")} className={menu === "women" ? "active" : ""}>WOMEN</Link>
+                    <Link to="/about" onClick={() => setMenu("about")} className={menu === "about" ? "active" : ""}>ABOUT</Link>
+                    <Link to="/categories" onClick={() => setMenu("categories")} className={menu === "categories" ? "active" : ""}>CATEGORIES</Link>
+                    <Link to="/popular" onClick={() => setMenu("popular")} className={menu === "popular" ? "active" : ""}>POPULAR</Link>
+                    <Link to="/arrivals" onClick={() => setMenu("arrivals")} className={menu === "arrivals" ? "active" : ""}>ARRIVALS</Link>
                     <Link to="/contact" onClick={() => setMenu("contact")} className={menu === "contact" ? "active" : ""}>CONTACT</Link>
                 </ul>
             </div>
