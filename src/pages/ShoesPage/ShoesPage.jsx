@@ -10,7 +10,7 @@ const ShoesPage = ({ shoes }) => {
 
     return (
         <div className="w-full mt-5 flex flex-col justify-center items-center">
-            <h1 className="mb-5 text-4xl font-semibold">Our Shoes Collection👟</h1>
+            <h1 className="mb-5 text-4xl font-semibold">Categories👟</h1>
             <ShoesFilter shoes={shoes} onFilter={handleFilter} />
             <div className="w-full grid grid-cols-4 mt-5 p-5" >
                 {filteredShoes.map(shoe => (

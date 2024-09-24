@@ -24,9 +24,9 @@ const ShoeFilter = ({ shoes, onFilter }) => {
     };
 
     return (
-        <div className='p-4 flex justify-center items-center'>
+        <div className='p-4 flex flex-wrap justify-center items-center'>
             <h2 className='mr-3 rounded bg-slate-300 p-1 '>Filter</h2>
-            <div className='flex justify-center items-center'>
+            <div className='flex flex-wrap justify-center items-center'>
                 <div className='mr-3'>
                     <label>Brand:</label>
                     <input className='ml-1 p-1 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500' type="text" value={brand} onChange={e => setBrand(e.target.value)} />
