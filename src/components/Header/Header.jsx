@@ -20,7 +20,7 @@ const Home = () => {
           <p className="text-xl md:text-2xl italic mt-2">Let us find you a cool pair</p>
           <p className="mt-4 text-sm">Tired of the same old boring shoes? Step into a world of fresh, trendy designs that are anything but ordinary. At ShoesHub, we&apos;re here to help you find the coolest pairs that match your unique style.
           </p>
-          <Link to="/"><button className="rounded-3xl px-4 mt-5 bg-gray-700 text-white p-2 cursor-pointer ">SHOP NOW</button></Link>
+          <button className="rounded-3xl px-4 mt-5 bg-gray-700 text-white p-2 cursor-pointer "><a href="#popular">SHOP NOW</a></button>
         </div>
         <div className="flex items-center gap-20">
           <div className="flex flex-col items-center">

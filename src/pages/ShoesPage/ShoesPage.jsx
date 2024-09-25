@@ -1,8 +1,10 @@
-import { useState } from "react"
-import ShoesFilter from "../../components/ShoesFilter/ShoesFilter"
+import { useState } from "react";
+import ShoesFilter from "../../components/ShoesFilter/ShoesFilter";
+import { item_list } from "../../assets/assets";
+import Card from "../../components/Card/Card";
 
-const ShoesPage = ({ shoes }) => {
-    const [filteredShoes, setFilteredShoes] = useState(shoes);
+const ShoesPage = () => {
+    const [filteredShoes, setFilteredShoes] = useState(item_list);
 
     const handleFilter = (filteredData) => {
         setFilteredShoes(filteredData);
@@ -10,13 +12,17 @@ const ShoesPage = ({ shoes }) => {
 
     return (
         <div className="w-full mt-5 flex flex-col justify-center items-center">
-            <h1 className="mb-5 text-4xl font-semibold">Categories👟</h1>
-            <ShoesFilter shoes={shoes} onFilter={handleFilter} />
-            <div className="w-full grid grid-cols-4 mt-5 p-5" >
+            <h1 className="mb-5 text-4xl font-semibold">Categories</h1>
+            <ShoesFilter shoes={item_list} onFilter={handleFilter} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-5">
                 {filteredShoes.map(shoe => (
-                    <div className="rounded bg-sky-200 m-2" key={shoe.id}>
-                        <p className="p-1">{shoe.brand} - Size {shoe.size} - Color {shoe.color} - ${shoe.price}</p>
-                    </div>
+                    <Card
+                        key={shoe.id}
+                        image={shoe.image}
+                        title={shoe.title}
+                        price={shoe.price}
+                        size={shoe.size}
+                    />
                 ))}
             </div>
         </div>

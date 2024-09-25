@@ -7,7 +7,7 @@ const Popular = () => {
   const limitedCards = item_list.slice(0, 4);
 
   return (
-    <div className="my-10 sm:my-auto">
+    <div className="my-10 sm:my-auto" id="popular">
       <div className="p-4">
         <h2 className="flex justify-center items-center text-3xl md:text-4xl font-bold ">Popular</h2>
         <h3 className="flex justify-center items-center text-sm my-2 font-light italic">Products</h3>
@@ -18,6 +18,7 @@ const Popular = () => {
               image={card.image}
               title={card.title}
               price={card.price}
+              size={card.size}
             />
           ))}
         </div>

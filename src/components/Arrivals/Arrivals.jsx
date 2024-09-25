@@ -19,6 +19,7 @@ const Arrivals = () => {
                 image={card.image}
                 title={card.title}
                 price={card.price}
+                size={card.size}
               />
             </div>
           ))}

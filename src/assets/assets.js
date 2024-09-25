@@ -72,84 +72,113 @@ export const item_list = [
         id: 1,
         title: "Nike smart",
         image: nikesmart,
-        price: "$25"
+        price: "125",
+        size: 5
     },
     {
         id: 2,
         title: "Nike air red",
         image: nikeairred,
-        price: "$30"
+        price: "130",
+        size: 6
     },
     {
         id: 3,
         title: "Nike adapt bb",
         image: nikeadaptbb,
-        price: "$22"
+        price: "292",
+        size: 8
     },
     {
         id: 4,
         title: "Nike highlight",
         image: hero,
-        price: "$55"
+        price: "155",
+        size: 9
     },
     {
         id: 5,
         title: "Nike Air Green",
         image: product5,
-        price: "$28"
+        price: "299",
+        size: 10
     },
     {
         id: 6,
         title: "Nike beige",
         image: product9,
-        price: "$19"
+        price: "195",
+        size: 7
     },
     {
         id: 7,
         title: "Nike Purple",
         image: product10,
-        price: "$15"
+        price: "105",
+        size: 8
     },
     {
         id: 8,
         title: "Nike Green",
         image: product2,
-        price: "$16"
+        price: "56",
+        size: 5
     },
     {
         id: 9,
         title: "Nike Red",
         image: product3,
-        price: "$17"
+        price: "137",
+        size: 8
     },
     {
         id: 10,
         title: "Nike Blue",
         image: product6,
-        price: "$12"
+        price: "82",
+        size: 9
     },
     {
         id: 11,
         title: "Nike White",
         image: product4,
-        price: "$18"
+        price: "85",
+        size: 10
     },
     {
         id: 12,
         title: "Nike Air Blue",
         image: product7,
-        price: "$11"
+        price: "271",
+        size: 6
     },
     {
         id: 13,
         title: "Shoes 8",
         image: product8,
-        price: "$12"
+        price: "168",
+        size: 7
     },
     {
         id: 14,
         title: "Shoes 9",
-        image: product9,
-        price: "$12"
+        image: product10,
+        price: "60",
+        size: 6
     },
+    {
+        id: 15,
+        title: "Shoes 10",
+        image: product11,
+        price: "272",
+        size: 7
+    },
+    {
+        id: 16,
+        title: "Shoes 11",
+        image: product12,
+        price: "162",
+        size: 8
+    },
+    
 ]

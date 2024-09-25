@@ -4,7 +4,7 @@ import { faStar, faTags } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
   return (
-    <div className='my-24 sm:my-12 flex flex-col md:flex-row justify-between items-center gap-16 md:gap-20 px-4 md:px-8'>
+    <div className='my-24 sm:my-12 flex flex-col md:flex-row justify-between items-center gap-16 md:gap-20 px-4 md:px-8' id='about'>
       {/* Left Section */}
       <div className='relative hidden md:block'>
         <div className='bg-gray-300 rounded-full h-72 w-72 lg:h-96 lg:w-96 mx-auto'> </div>
