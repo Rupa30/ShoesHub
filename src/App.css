@@ -20,7 +20,7 @@ a {
 .app {
     width: 100%;
     /* Full width for smaller screens */
-    max-width: 1200px;
+    /* max-width: 1200px; */
     /* Adjust based on your design */
     margin: auto;
     padding: 0 25px;

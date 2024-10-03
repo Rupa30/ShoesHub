@@ -78,112 +78,144 @@ export const item_list = [
         title: "Nike smart",
         image: nikesmart,
         price: "125",
-        size: 5
+        size: 5,
+        color: "white",
+        brand: "Nike smart"
     },
     {
         id: 2,
         title: "Nike air red",
         image: nikeairred,
         price: "130",
-        size: 6
+        size: 6,
+        color: "red",
+        brand: "Nike air red"
     },
     {
         id: 3,
         title: "Nike adapt bb",
         image: nikeadaptbb,
         price: "292",
-        size: 8
+        size: 8,
+        color: "blue",
+        brand: "Nike adapt bb"
     },
     {
         id: 4,
         title: "Nike highlight",
         image: hero,
         price: "155",
-        size: 9
+        size: 9,
+        color: "black",
+        brand: "Nike highlight"
     },
     {
         id: 5,
         title: "Nike Air Green",
         image: product5,
         price: "299",
-        size: 10
+        size: 10,
+        color: "green",
+        brand: "Nike Air Green"
     },
     {
         id: 6,
         title: "Nike beige",
         image: product9,
         price: "195",
-        size: 7
+        size: 7,
+        color: "beige",
+        brand: "Nike beige"
     },
     {
         id: 7,
         title: "Nike Purple",
         image: product10,
         price: "105",
-        size: 8
+        size: 8,
+        color: "purple",
+        brand: "Nike Purple"
     },
     {
         id: 8,
         title: "Nike Green",
         image: product2,
         price: "56",
-        size: 5
+        size: 5,
+        color: "green",
+        brand: "Nike Green"
     },
     {
         id: 9,
         title: "Nike Red",
         image: product3,
         price: "137",
-        size: 8
+        size: 8,
+        color: "red",
+        brand: "Nike Red"
     },
     {
         id: 10,
         title: "Nike Blue",
         image: product6,
         price: "82",
-        size: 9
+        size: 9,
+        color: "blue",
+        brand: "Nike Blue"
     },
     {
         id: 11,
         title: "Nike White",
         image: product4,
         price: "85",
-        size: 10
+        size: 10,
+        color: "white",
+        brand: "Nike White"
     },
     {
         id: 12,
         title: "Nike Air Blue",
         image: product7,
         price: "271",
-        size: 6
+        size: 6,
+        color: "blue",
+        brand: "Nike Air Blue"
     },
     {
         id: 13,
         title: "Shoes 8",
         image: product8,
         price: "168",
-        size: 7
+        size: 7,
+        color: "blue",
+        brand: "Shoes 8"
     },
     {
         id: 14,
         title: "Shoes 9",
         image: product10,
         price: "60",
-        size: 6
+        size: 6,
+        color: "purple",
+        brand: "Shoes 9"
     },
     {
         id: 15,
         title: "Shoes 10",
         image: product11,
         price: "272",
-        size: 7
+        size: 7,
+        color: "white",
+        brand: "Shoes 10"
     },
     {
         id: 16,
         title: "Shoes 11",
         image: product12,
         price: "162",
-        size: 8
+        size: 8,
+        color: "green",
+        brand: "Shoes 11"
     },
     
 ]
