@@ -8,6 +8,7 @@ import About from './components/About/About';
 import Popular from './components/Popular/Popular'
 import Arrivals from './components/Arrivals/Arrivals';
 import Contact from './components/Contact/Contact';
+import Cart from './components/Cart/Cart';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/popular' element={<Popular />} />
           <Route path='/arrivals' element={<Arrivals />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
       </div>
     </Router>

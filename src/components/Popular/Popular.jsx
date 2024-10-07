@@ -13,13 +13,14 @@ const Popular = () => {
         <h3 className="flex justify-center items-center text-sm my-2 font-light italic">Products</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {limitedCards.map((card, index) => (
+           <div key={index}>
             <Card
-              key={index}
+              id={card.id}
               image={card.image}
               title={card.title}
               price={card.price}
-              // size={card.size}
             />
+         </div>
           ))}
         </div>
       </div>
