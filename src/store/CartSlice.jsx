@@ -19,14 +19,18 @@ const cartSlice = createSlice({
                 existingItem.totalPrice = existingItem.quantity * existingItem.price; // Update total price
             } else {
                 state.items.push({
-                    ...newItem,
+                    id: newItem.id,
+                    title: newItem.title,
+                    price: Number(newItem.price),
+                    image: newItem.image,
                     quantity: 1,
-                    totalPrice: newItem.price,
+                    totalPrice: Number(newItem.price),
                 });
             }
 
             state.totalQuantity++;
-            state.totalAmount += newItem.price; // Update total amount
+            state.totalAmount = Number(state.totalAmount) + Number(newItem.price); // Update total amount
+
         },
         removeFromCart(state, action) {
             const id = action.payload;
