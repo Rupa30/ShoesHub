@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { decrementQuantity, incrementQuantity, removeFromCart } from "../../store/CartSlice";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -22,7 +23,7 @@ const Cart = () => {
 
   return (
     <div className="">
-      <h2 className="flex justify-center items-center text-2xl text-red-500 font-semibold">Your Cart</h2>
+      <h2 className="flex justify-start ml-0 sm:ml-6 items-center text-xl sm:text-2xl text-red-500 font-semibold">Your Cart→</h2>
 
       <div className="flex flex-col sm:flex-row flex-wrap justify-around mt-10 mx-auto">
         <div className="">
@@ -104,9 +105,11 @@ const Cart = () => {
           </div>
 
           <div className="bg-green-500 text-white rounded-md mt-4">
-            <button className="w-full py-3 text-lg font-semibold">
-              CHECKOUT
-            </button>
+            <Link to="/checkout">
+              <button className="w-full py-3 text-lg font-semibold">
+                CHECKOUT TO PROCEED
+              </button>
+            </Link>
           </div>
         </div>
 
