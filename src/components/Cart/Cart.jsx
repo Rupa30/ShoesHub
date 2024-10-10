@@ -21,11 +21,11 @@ const Cart = () => {
   };
 
   return (
-    <div className="w-full m-0 p-0">
+    <div className="">
       <h2 className="flex justify-center items-center text-2xl text-red-500 font-semibold">Your Cart</h2>
 
       <div className="flex flex-col sm:flex-row flex-wrap justify-around mt-10 mx-auto">
-        <div className=" p-3">
+        <div className="">
           <ul>
             {cartItems.map((item) => (
               <li key={item.id}>
@@ -35,7 +35,7 @@ const Cart = () => {
                   </div>
 
                   <div className="flex flex-col justify-between gap-3">
-                    <p className="text-md font-medium">{item.title}</p>
+                    <p className="text-base font-medium">{item.title}</p>
                     <div className="flex flex-row justify-start items-start gap-2 text-sm">
                       <button
                         onClick={() => decrementProductQuantity(item.id, item.quantity)}
@@ -72,19 +72,23 @@ const Cart = () => {
           </ul>
         </div>
 
-        <div className="w-80 mx-auto sm:mx-0 h-96 p-5 bg-white border rounded-md shadow-md flex flex-col justify-between">
+        <div className="w-full sm:w-2/4 text-xs mx-auto sm:mx-0 h-96 p-5 bg-white border rounded-md shadow-md flex flex-col justify-between">
           <div>
             <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
           </div>
 
           <div className="mb-2">
-            <div className="flex justify-between items-center">
-              <p className="text-gray-600">Subtotal:</p>
+            <div className="flex justify-between items-center text-base">
+              <p className="text-gray-600">Total Quantity:</p>
               <p className="font-semibold">{totalQuantity}</p>
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center text-base">
+              <p className="text-gray-600">Subtotal:</p>
+              <p className="font-semibold">${totalAmount}</p>
+            </div>
+            <div className="flex justify-between items-center text-base">
               <p className="text-gray-600">Shipping:</p>
-              <span className="text-green-500">Free</span>
+              <span className="text-green-500"><span className="line-through text-black">$9</span> Free</span>
             </div>
             <div className="flex justify-between items-center mt-2 text-sm text-green-600 cursor-pointer">
               <p>Add coupon code</p>
