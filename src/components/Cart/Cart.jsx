@@ -50,7 +50,7 @@ const Cart = () => {
                       </button>
                     </div>
 
-                    <div className="flex flex-row gap-5 text-sm font-medium">
+                    <div className="flex flex-row gap-3 sm:gap-5 text-sm font-medium">
                       <p className="font-bold">${Number(item.totalPrice).toFixed(2)}</p>
                       <p className="text-red-500">60% OFF</p>
                     </div>
