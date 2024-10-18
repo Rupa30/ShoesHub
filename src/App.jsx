@@ -9,6 +9,7 @@ import Popular from './components/Popular/Popular'
 import Arrivals from './components/Arrivals/Arrivals';
 import Contact from './components/Contact/Contact';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path='/arrivals' element={<Arrivals />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
       </div>
     </Router>

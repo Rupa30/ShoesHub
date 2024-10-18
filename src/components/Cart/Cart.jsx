@@ -107,7 +107,7 @@ const Cart = () => {
           <div className="bg-green-500 text-white rounded-md mt-4">
             <Link to="/checkout">
               <button className="w-full py-3 text-lg font-semibold">
-                CHECKOUT TO PROCEED
+                PROCEED TO CHECKOUT
               </button>
             </Link>
           </div>
