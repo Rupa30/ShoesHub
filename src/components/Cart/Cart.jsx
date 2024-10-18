@@ -31,20 +31,20 @@ const Cart = () => {
           <ul className="space-y-6">
             {cartItems.map((item) => (
               <li key={item.id} className="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center sm:justify-between">
                   {/* Product Image */}
-                  <img src={item.image} alt={item.title} className="w-24 h-24 object-contain" />
+                  <img src={item.image} alt={item.title} className="w-24 h-24 object-contain sm:w-28 sm:h-28" />
 
                   {/* Product Details */}
-                  <div className="flex flex-col flex-grow">
+                  <div className="flex flex-col w-full">
                     <div className="flex justify-between items-start">
                       <p className="text-lg font-medium">{item.title}</p>
-                      <p
+                      <button
                         onClick={() => removeProductFromCart(item.id)}
-                        className="cursor-pointer text-red-400 font-semibold text-lg hover:text-red-600"
+                        className="text-red-400 font-semibold text-xl hover:text-red-600"
                       >
                         ×
-                      </p>
+                      </button>
                     </div>
 
                     {/* Quantity and Pricing */}
@@ -52,14 +52,14 @@ const Cart = () => {
                       <div className="flex items-center gap-3">
                         <button
                           onClick={() => decrementProductQuantity(item.id, item.quantity)}
-                          className="bg-gray-300 hover:bg-gray-200 text-sm rounded-full w-8 h-8 flex items-center justify-center"
+                          className="bg-gray-300 text-sm rounded-full w-8 h-8 flex items-center justify-center"
                         >
                           -
                         </button>
                         <span className="text-base">{item.quantity}</span>
                         <button
                           onClick={() => incrementProductQuantity(item.id)}
-                          className="bg-gray-300 hover:bg-gray-200 text-sm rounded-full w-8 h-8 flex items-center justify-center"
+                          className="bg-gray-300 text-sm rounded-full w-8 h-8 flex items-center justify-center"
                         >
                           +
                         </button>
@@ -86,7 +86,7 @@ const Cart = () => {
         </div>
 
         {/* Order Summary Section */}
-        <div className="sm:w-1/3 h-96 bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+        <div className="sm:w-1/3 bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
           <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
 
           <div className="space-y-2 mb-6">
