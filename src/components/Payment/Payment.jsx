@@ -108,11 +108,7 @@ const PaymentMethod = () => {
                     </div>
                 </div>
             )}
-
-            {/* Proceed to Payment Button */}
-            {/* <button className="mt-6 bg-green-500 text-white text-center text-lg font-semibold rounded-md py-3 w-full">
-        Proceed to Payment
-      </button> */}
+            
         </div>
     );
 };

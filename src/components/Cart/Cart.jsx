@@ -22,7 +22,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto">
       <h2 className="text-2xl font-semibold text-red-500 my-6">Your Cart →</h2>
 
       <div className="flex flex-col sm:flex-row justify-between gap-8 mt-8">

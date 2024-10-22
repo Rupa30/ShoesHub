@@ -8,14 +8,51 @@ const Checkout = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   const [sameAsBilling, setSameAsBilling] = useState(false);
+  const [billingInfo, setBillingInfo] = useState({
+    firstName: '',
+    lastName: '',
+    address: '',
+    phone: '',
+    email: '',
+    city: '',
+    zipCode: ''
+  });
+  const [isFormValid, setIsFormValid] = useState(true);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleCheckboxChange = () => {
     setSameAsBilling(prev => !prev);
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setBillingInfo((prevInfo) => ({ ...prevInfo, [name]: value }));
+  };
+
+  const validateForm = () => {
+    const { firstName, lastName, address, phone, email, city, zipCode } = billingInfo;
+    // Check if all required fields are filled
+    return firstName && lastName && address && phone && email && city && zipCode;
+  };
+
+  const handlePlaceOrder = (e) => {
+    e.preventDefault();
+    const isValid = validateForm();
+    setIsFormValid(isValid);
+    setFormSubmitted(true);
+
+    if (isValid) {
+      // If form is valid, proceed with the order placement logic
+      console.log('Form is valid. Placing order...');
+    } else {
+      // Show the warning if form is not valid
+      console.log('Form is not valid. Please fill out all fields.');
+    }
+  };
+
   return (
     <div>
-      <h2 className="flex justify-start ml-0 sm:ml-6 items-center text-xl sm:text-2xl text-red-500 font-semibold">Checkout→</h2>
+      <h2 className="flex justify-start items-center text-xl sm:text-2xl text-red-500 font-semibold">Checkout→</h2>
 
       <div className="flex flex-col sm:flex-row justify-between gap-4 mt-10 mx-auto max-w-7xl">
         {/* Left Column - Billing and Shipping */}
@@ -24,22 +61,18 @@ const Checkout = () => {
           <div className="bg-white border rounded-md shadow-md p-5">
             <h2 className="text-lg font-semibold mb-4">Billing Information</h2>
             <div className="grid grid-cols-2 gap-2">
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="First Name" />
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="Last Name" />
-              <input className="col-span-2 h-16 bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="Address" />
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="number" placeholder="Phone" />
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="email" placeholder="Email" />
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="City"/>
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="number" placeholder="Zip Code"/>
+              <input name="firstName" className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="First Name" value={billingInfo.firstName} onChange={handleInputChange} />
+              <input name="lastName" className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="Last Name" value={billingInfo.lastName} onChange={handleInputChange} />
+              <input name="address" className="col-span-2 h-16 bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="Address" value={billingInfo.address} onChange={handleInputChange} />
+              <input name="phone" className="bg-gray-100 rounded text-sm p-2 text-left" type="number" placeholder="Phone" value={billingInfo.phone} onChange={handleInputChange} />
+              <input name="email" className="bg-gray-100 rounded text-sm p-2 text-left" type="email" placeholder="Email" value={billingInfo.email} onChange={handleInputChange} />
+              <input name="city" className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="City" value={billingInfo.city} onChange={handleInputChange} />
+              <input name="zipCode" className="bg-gray-100 rounded text-sm p-2 text-left" type="number" placeholder="Zip Code" value={billingInfo.zipCode} onChange={handleInputChange} />
             </div>
             <div style={{ marginTop: '20px' }}>
               <label>
-                <input
-                  type="checkbox"
-                  checked={sameAsBilling}
-                  onChange={handleCheckboxChange}
-                />
-                {' '}Ship to a different address 
+                <input type="checkbox" checked={sameAsBilling} onChange={handleCheckboxChange} />
+                {' '}Ship to a different address
               </label>
             </div>
           </div>
@@ -47,18 +80,18 @@ const Checkout = () => {
           {/* Shipping Information */}
           {
             sameAsBilling && (
-            <div className="bg-white border rounded-md shadow-md p-5 mt-4">
-            <h2 className="text-lg font-semibold mb-4">Shipping Information</h2>
-            <div className="grid grid-cols-2 gap-2">
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="First Name" />
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="Last Name" />
-              <input className="col-span-2 h-16 bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="Address" />
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="number" placeholder="Phone" />
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="email" placeholder="Email" />
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="City"/>
-              <input className="bg-gray-100 rounded text-sm p-2 text-left" type="number" placeholder="Zip Code"/>
-            </div>
-          </div>)
+              <div className="bg-white border rounded-md shadow-md p-5 mt-4">
+                <h2 className="text-lg font-semibold mb-4">Shipping Information</h2>
+                <div className="grid grid-cols-2 gap-2">
+                  <input className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="First Name" />
+                  <input className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="Last Name" />
+                  <input className="col-span-2 h-16 bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="Address" />
+                  <input className="bg-gray-100 rounded text-sm p-2 text-left" type="number" placeholder="Phone" />
+                  <input className="bg-gray-100 rounded text-sm p-2 text-left" type="email" placeholder="Email" />
+                  <input className="bg-gray-100 rounded text-sm p-2 text-left" type="text" placeholder="City" />
+                  <input className="bg-gray-100 rounded text-sm p-2 text-left" type="number" placeholder="Zip Code" />
+                </div>
+              </div>)
           }
 
           <div className="shadow-md">
@@ -99,12 +132,17 @@ const Checkout = () => {
           </div>
 
           <div className="bg-green-500 text-white rounded-md mt-4">
-            <Link to="/checkout">
-              <button className="w-full py-3 text-lg font-semibold">
-                Place Order
-              </button>
-            </Link>
+            <button className="w-full py-3 text-lg font-semibold" onClick={handlePlaceOrder}>
+              Place Order
+            </button>
           </div>
+
+          {/* Display warning if form is invalid */}
+          {!isFormValid && formSubmitted && (
+            <p className="text-red-500 text-sm mt-2 text-center">
+              Please fill out all required fields before placing the order.
+            </p>
+          )}
         </div>
       </div>
 
