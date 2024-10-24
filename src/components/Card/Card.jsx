@@ -30,7 +30,7 @@ const Card = ({ id, image, title, price, size, color, brand }) => {
     const quantity = isInCart ? isInCart.quantity : 0;
 
     return (
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:scale-105 duration-200">
             <div>
                 <img src={image} alt={title} className="w-full h-32 sm:h-48 object-contain bg-slate-100 p-2 shadow-sm" />
             </div>
