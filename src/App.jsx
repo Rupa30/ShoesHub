@@ -10,6 +10,7 @@ import Arrivals from './components/Arrivals/Arrivals';
 import Contact from './components/Contact/Contact';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
+import OrderSuccess from './pages/OrderSuccess/OrderSuccess';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path="/OrderSuccess" element={<OrderSuccess />} />
         </Routes>
       </div>
     </Router>

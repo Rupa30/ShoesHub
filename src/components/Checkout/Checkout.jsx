@@ -1,13 +1,17 @@
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import PaymentMethod from "../Payment/Payment";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import PaymentMethod from "../Payment/Payment";
+import OrderSuccess from "../../pages/OrderSuccess/OrderSuccess"
 
 const Checkout = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
+  const navigate = useNavigate();
+
   const [sameAsBilling, setSameAsBilling] = useState(false);
+
   const [billingInfo, setBillingInfo] = useState({
     firstName: '',
     lastName: '',
@@ -44,6 +48,9 @@ const Checkout = () => {
     if (isValid) {
       // If form is valid, proceed with the order placement logic
       console.log('Form is valid. Placing order...');
+      // Redirect after validation
+      navigate('/OrderSuccess');
+      
     } else {
       // Show the warning if form is not valid
       console.log('Form is not valid. Please fill out all fields.');
