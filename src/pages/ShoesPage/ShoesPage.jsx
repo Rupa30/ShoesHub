@@ -20,6 +20,7 @@ const ShoesPage = () => {
                 {filteredShoes.map(shoe => (
                     <Card
                         key={shoe.id}
+                        id={shoe.id}
                         image={shoe.image}
                         title={shoe.title}
                         price={shoe.price}
