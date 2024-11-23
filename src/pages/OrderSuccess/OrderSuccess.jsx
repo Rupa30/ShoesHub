@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 const OrderSuccess = () => {
   return (
-    <div className="flex flex-col justify-center items-center p-4">
+    <div className="flex flex-col justify-center items-center p-2 sm:p-4">
       {/* Container */}
-      <div className="bg-white shadow-md rounded-lg p-8 max-w-lg w-full text-center">
+      <div className="bg-white shadow-md rounded-lg p-4 sm:p-8 max-w-lg w-full text-center">
         {/* Success Icon */}
         <FontAwesomeIcon icon={faCheckCircle} className="text-green-500 text-6xl mb-4" />
 
@@ -23,16 +23,16 @@ const OrderSuccess = () => {
         <div className="flex justify-around mt-8 text-gray-600">
           <div className="flex flex-col items-center">
             <FontAwesomeIcon icon={faTruck} className="text-4xl" />
-            <p className="mt-2">Fast Delivery</p>
+            <p className="text-sm sm:text-base mt-2">Fast Delivery</p>
           </div>
           <div className="flex flex-col items-center">
             <FontAwesomeIcon icon={faGift} className="text-4xl" />
-            <p className="mt-2">Special Packaging</p>
+            <p className="text-sm sm:text-base mt-2">Special Packaging</p>
           </div>
         </div>
 
         {/* Continue Shopping Button */}
-        <button className="py-4 px-8 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 my-3 hover:opacity-75 mt-8">
+        <button className="px-4 py-4 sm:px-8 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 my-3 hover:opacity-75 mt-8">
           <Link to="/">Continue Shopping</Link>
         </button>
       </div>
