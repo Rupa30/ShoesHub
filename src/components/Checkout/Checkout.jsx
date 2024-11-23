@@ -2,15 +2,20 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import PaymentMethod from "../Payment/Payment";
-import OrderSuccess from "../../pages/OrderSuccess/OrderSuccess"
+import { clearCart } from "../../store/CartSlice";
+import { useDispatch } from "react-redux";
+// import OrderSuccess from "../../pages/OrderSuccess/OrderSuccess"
 
 const Checkout = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [sameAsBilling, setSameAsBilling] = useState(false);
+  const [selectedMethod, setSelectedMethod] = useState("credit");
+
 
   const [billingInfo, setBillingInfo] = useState({
     firstName: '',
@@ -26,6 +31,10 @@ const Checkout = () => {
 
   const handleCheckboxChange = () => {
     setSameAsBilling(prev => !prev);
+  };
+
+  const handlePaymentChange = (e) => {
+    setSelectedMethod(e.target.value);
   };
 
   const handleInputChange = (e) => {
@@ -44,6 +53,7 @@ const Checkout = () => {
     const isValid = validateForm();
     setIsFormValid(isValid);
     setFormSubmitted(true);
+    dispatch(clearCart());
 
     if (isValid) {
       // If form is valid, proceed with the order placement logic
@@ -102,7 +112,10 @@ const Checkout = () => {
           }
 
           <div className="shadow-md">
-            <PaymentMethod />
+            <PaymentMethod 
+            selectedMethod={selectedMethod}
+            handlePaymentChange={handlePaymentChange}
+            />
           </div>
         </div>
 

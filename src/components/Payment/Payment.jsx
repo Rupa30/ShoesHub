@@ -3,12 +3,7 @@ import { FaCreditCard } from "react-icons/fa";
 import { MdOutlineAccountBalance, MdQrCodeScanner } from "react-icons/md";
 
 
-const PaymentMethod = () => {
-    const [selectedMethod, setSelectedMethod] = useState("credit");
-
-    const handlePaymentChange = (e) => {
-        setSelectedMethod(e.target.value);
-    };
+const PaymentMethod = ({selectedMethod, handlePaymentChange}) => {
 
     return (
         <div className="my-4 bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
