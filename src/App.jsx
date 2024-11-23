@@ -11,6 +11,7 @@ import Contact from './components/Contact/Contact';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import OrderSuccess from './pages/OrderSuccess/OrderSuccess';
+import ProductDetail from './pages/Product/ProductDetail';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/categories' element={<ShoesPage shoes={shoes} />} />
+          <Route path='/products/:id' element={<ProductDetail />} />
           <Route path='/popular' element={<Popular />} />
           <Route path='/arrivals' element={<Arrivals />} />
           <Route path='/contact' element={<Contact />} />

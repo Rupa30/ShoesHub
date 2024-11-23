@@ -1,9 +1,16 @@
 import { addToCart, removeFromCart, incrementQuantity, decrementQuantity } from "../../store/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom"
 
 const Card = ({ id, image, title, price, size, color, brand }) => {
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.items);
+
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate(`/products/${id}`);
+    };
 
     const addProductToCart = () => {
         dispatch(addToCart({
@@ -30,8 +37,9 @@ const Card = ({ id, image, title, price, size, color, brand }) => {
     const quantity = isInCart ? isInCart.quantity : 0;
 
     return (
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:scale-105 duration-200">
-            <div>
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:scale-105 duration-200"
+        >
+            <div onClick={handleNavigate}>
                 <img src={image} alt={title} className="w-full h-32 sm:h-48 object-contain bg-slate-100 p-2 shadow-sm" />
             </div>
 
@@ -46,7 +54,7 @@ const Card = ({ id, image, title, price, size, color, brand }) => {
                             className="bg-red-600 rounded-lg text-white px-3 py-2 text-xs">
                             -
                         </button>
-                        <div className="flex justify-center items-center p-1"><span>{quantity}</span></div> 
+                        <div className="flex justify-center items-center p-1"><span>{quantity}</span></div>
                         <button
                             onClick={incrementProductQuantity}
                             className="bg-slate-800 rounded-lg text-white px-3 py-2 text-xs">
