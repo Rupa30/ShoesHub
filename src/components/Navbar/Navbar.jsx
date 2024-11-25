@@ -11,7 +11,7 @@ const Navbar = () => {
     return (
         <div className='w-full flex flex-wrap justify-between items-center py-5' id="navbar">
             {/* Hamburger Icon */}
-            <div onClick={() => setIsMenuOpen(!isMenuOpen)} className="z-50 cursor-pointer">
+            <div onClick={() => setIsMenuOpen(!isMenuOpen)} className="visible lg:hidden z-50 cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className={`h-8 w-8 ${isMenuOpen ? "text-white" : "text-black"}`}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
@@ -22,14 +22,20 @@ const Navbar = () => {
                 <Link to="/"><p className="font-bold text-xl md:text-2xl">ShoesHub.</p></Link>
             </Link>
 
+            {/* Links */}
+            <div className="hidden lg:flex">
+                <div className="flex justify-between items-center gap-5">
+                    <Link to="/" onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>HOME</Link>
+                    <Link to="/about" onClick={() => setMenu("about")} className={menu === "about" ? "active" : ""}>ABOUT</Link>
+                    <Link to="/categories" onClick={() => setMenu("categories")} className={menu === "categories" ? "active" : ""}>CATEGORIES</Link>
+                    <Link to="/contact" onClick={() => setMenu("contact")} className={menu === "contact" ? "active" : ""}>CONTACT</Link>
+                </div>
+            </div>
+
             {/* Icons */}
             <div className="flex justify-between gap-5 cursor-pointer">
-                {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-8 w-8">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg> */}
 
                 {/* Cart Icon */}
-
                 <Link to="/cart">
                     <div className="relative">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="sm:h-8 sm:w-8 h-6 w-6">
@@ -53,11 +59,8 @@ const Navbar = () => {
             <div className={`fixed top-0 left-0 w-1/2 h-full bg-black bg-opacity-90 transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-1000 ease-in-out z-40`}>
                 <ul className="flex flex-col justify-center items-center h-full gap-8 text-white cursor-pointer">
                     <Link to="/" onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>HOME</Link>
-                    {/* <a href="#about" onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>ABOUT</a> */}
                     <Link to="/about" onClick={() => setMenu("about")} className={menu === "about" ? "active" : ""}>ABOUT</Link>
                     <Link to="/categories" onClick={() => setMenu("categories")} className={menu === "categories" ? "active" : ""}>CATEGORIES</Link>
-                    <Link to="/popular" onClick={() => setMenu("popular")} className={menu === "popular" ? "active" : ""}>POPULAR</Link>
-                    <Link to="/arrivals" onClick={() => setMenu("arrivals")} className={menu === "arrivals" ? "active" : ""}>ARRIVALS</Link>
                     <Link to="/contact" onClick={() => setMenu("contact")} className={menu === "contact" ? "active" : ""}>CONTACT</Link>
                 </ul>
             </div>
