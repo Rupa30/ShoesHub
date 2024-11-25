@@ -158,7 +158,7 @@ const ProductDetail = () => {
 
 
                 {/* Right Side */}
-                <div className="w-full sm:w-1/2 md:w-2/5 lg:w-1/3 flex flex-col justify-between gap-4">
+                <div className="w-full sm:w-1/2 md:w-2/5 lg:w-1/3 flex flex-col justify-between gap-2 sm:gap-4">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">{product.title}</h1>
                     <div className="flex gap-1">
                         <FontAwesomeIcon icon={faStar} className="w-4" />
