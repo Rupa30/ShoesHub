@@ -32,7 +32,7 @@ import shoes7 from "./shoes7.png"
 import shoes8 from "./shoes8.png"
 import add_button from "./add_button.png"
 import minus from "./minus.png"
-
+import contactpage from "./contactpage.jpg"
 
 
 export const assets = {
@@ -69,7 +69,8 @@ export const assets = {
     shoes7,
     shoes8,
     add_button,
-    minus
+    minus,
+    contactpage
 }
 
 export const item_list = [
