@@ -1,10 +1,8 @@
 import { useState, useMemo } from 'react';
 import SearchableDropdown from '../SearchableDropDown/SearchableDropdown';
 
-
 const ShoeFilter = ({ shoes, onFilter }) => {
     const [brand, setBrand] = useState(null);
-    const [size, setSize] = useState(null);
     const [color, setColor] = useState(null);
     const [priceRange, setPriceRange] = useState(null);
 
@@ -12,11 +10,6 @@ const ShoeFilter = ({ shoes, onFilter }) => {
     const brandOptions = useMemo(() => {
         const uniqueBrands = [...new Set(shoes.map(shoe => shoe.brand))];
         return uniqueBrands.map(brand => ({ value: brand, label: brand }));
-    }, [shoes]);
-
-    const sizeOptions = useMemo(() => {
-        const uniqueSizes = [...new Set(shoes.map(shoe => shoe.size))];
-        return uniqueSizes.map(size => ({ value: size, label: size.toString() }));
     }, [shoes]);
 
     const colorOptions = useMemo(() => {
@@ -34,7 +27,6 @@ const ShoeFilter = ({ shoes, onFilter }) => {
     const handleFilter = () => {
         const filteredShoes = shoes.filter(shoe => {
             const matchesBrand = brand === null || shoe.brand === brand.value;
-            const matchesSize = size === null || shoe.size === parseInt(size.value);
             const matchesColor = color === null || shoe.color === color.value;
             const matchesPrice = priceRange === null ||
                 (priceRange.value === '0-100' && shoe.price >= 0 && shoe.price <= 100) ||
@@ -42,18 +34,21 @@ const ShoeFilter = ({ shoes, onFilter }) => {
                 (priceRange.value === '150-200' && shoe.price >= 150 && shoe.price <= 200) ||
                 (priceRange.value === '200-300' && shoe.price >= 200 && shoe.price <= 300);
 
-            return matchesBrand && matchesSize && matchesColor && matchesPrice;
+            return matchesBrand && matchesColor && matchesPrice;
         });
         onFilter(filteredShoes);
     };
 
     return (
-        <div className='p-4 flex flex-wrap justify-center items-center'>
-            <h2 className='mr-3 rounded bg-slate-300 p-1'>Filter</h2>
-            <div className='flex flex-wrap justify-center items-center'>
-
-                <div className='mr-3'>
-                    <label>Brand:</label>
+        <div className="p-4 bg-gray-100 rounded-lg shadow-lg">
+            <h2 className="text-xl font-semibold text-center mb-6 text-gray-700">
+                Filter Your Shoes
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div>
+                    <label className="block mb-2 text-sm font-medium text-gray-600">
+                        Brand:
+                    </label>
                     <SearchableDropdown
                         options={brandOptions}
                         value={brand}
@@ -62,18 +57,10 @@ const ShoeFilter = ({ shoes, onFilter }) => {
                     />
                 </div>
 
-                <div className='mr-3'>
-                    <label>Size:</label>
-                    <SearchableDropdown
-                        options={sizeOptions}
-                        value={size}
-                        onChange={setSize}
-                        placeholder="Search by Size"
-                    />
-                </div>
-
-                <div className='mr-3'>
-                    <label>Color:</label>
+                <div>
+                    <label className="block mb-2 text-sm font-medium text-gray-600">
+                        Color:
+                    </label>
                     <SearchableDropdown
                         options={colorOptions}
                         value={color}
@@ -82,21 +69,24 @@ const ShoeFilter = ({ shoes, onFilter }) => {
                     />
                 </div>
 
-                <div className='mr-3'>
-                    <label>Price Range:</label>
+                <div>
+                    <label className="block mb-2 text-sm font-medium text-gray-600">
+                        Price Range:
+                    </label>
                     <SearchableDropdown
                         options={priceOptions}
                         value={priceRange}
                         onChange={setPriceRange}
-                        placeholder="Search by Price Range"
+                        placeholder="Search by Price"
                     />
                 </div>
-
+            </div>
+            <div className="mt-6 text-center">
                 <button
-                    className='p-2 bg-sky-500 text-white rounded-md cursor-pointer font-bold'
+                    className="px-6 py-2 bg-black hover:bg-gray-700 text-white font-semibold  shadow-md transition duration-300"
                     onClick={handleFilter}
                 >
-                    Apply
+                    Apply Filters
                 </button>
             </div>
         </div>
