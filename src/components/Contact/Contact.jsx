@@ -1,9 +1,8 @@
-import Footer from "../../pages/Footer/Footer";
 import { assets } from "../../assets/assets";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-between mt-14 sm:mt-10 ">
+    <div className="min-h-screen mt-14 sm:mt-10">
       <h2 className="flex justify-center items-center text-xl sm:text-3xl text-red-500 font-semibold">Contact Us</h2>
 
       <div className="flex flex-col md:flex-row justify-around items-center gap-10 h-full py-10">
@@ -51,8 +50,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
 
     </div>
   );

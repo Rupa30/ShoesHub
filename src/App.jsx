@@ -12,7 +12,7 @@ import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import OrderSuccess from './pages/OrderSuccess/OrderSuccess';
 import ProductDetail from './pages/Product/ProductDetail';
-
+import Footer from './pages/Footer/Footer';
 
 function App() {
   return (
@@ -31,6 +31,7 @@ function App() {
           <Route path='/checkout' element={<Checkout />} />
           <Route path="/OrderSuccess" element={<OrderSuccess />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
