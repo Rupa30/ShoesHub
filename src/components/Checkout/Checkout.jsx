@@ -68,7 +68,7 @@ const Checkout = () => {
   };
 
   return (
-    <div>
+    <div className="mb-5">
       <h2 className="flex justify-start items-center text-xl sm:text-2xl text-red-500 font-semibold">Checkout→</h2>
 
       <div className="flex flex-col sm:flex-row justify-between gap-4 mt-10 mx-auto max-w-7xl">

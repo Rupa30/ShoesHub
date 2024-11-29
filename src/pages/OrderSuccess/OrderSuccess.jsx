@@ -1,11 +1,10 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faTruck, faGift } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 const OrderSuccess = () => {
   return (
-    <div className="flex flex-col justify-center items-center p-2 sm:p-4">
+    <div className="min-h-screen flex flex-col justify-center items-center p-2 sm:p-4">
       {/* Container */}
       <div className="bg-white shadow-md rounded-lg p-4 sm:p-8 max-w-lg w-full text-center">
         {/* Success Icon */}

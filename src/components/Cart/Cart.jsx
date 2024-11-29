@@ -22,7 +22,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto min-h-screen">
       <h2 className="text-2xl font-semibold text-red-500 my-6">Your Cart →</h2>
 
       {cartItems.length > 0 && (

@@ -3,7 +3,7 @@ import { faSquareXTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands
 
 const Footer = () => {
   return (
-    <div className="h-36 m-0 p-0 flex flex-col justify-around">
+    <div className="mt-4 h-36 m-0 p-0 flex flex-col justify-around">
       <div className="h-1 w-full bg-slate-200 rounded-xl"></div>
       <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-2 sm:gap-4">
         <p className="font-bold text-2xl md:text-3xl mb-2"><a href="#navbar">ShoesHub.</a></p>
